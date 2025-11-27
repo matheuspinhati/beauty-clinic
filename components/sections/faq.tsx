@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Plus, Minus, HelpCircle, MessageCircle } from "lucide-react"
-import { fadeInLeft, fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInUp, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const faqs = [
   {
@@ -44,9 +44,9 @@ export function FAQ() {
           {/* Left Column - Header */}
           <motion.div 
             variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="lg:col-span-2"
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -72,7 +72,7 @@ export function FAQ() {
                   <p className="text-sm text-stone-600 mb-3">Fale conosco pelo WhatsApp</p>
                   <Link 
                     href="/quiz"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
                   >
                     Enviar mensagem →
                   </Link>
@@ -85,9 +85,9 @@ export function FAQ() {
           <motion.div 
             className="lg:col-span-3 space-y-3"
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
           >
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index

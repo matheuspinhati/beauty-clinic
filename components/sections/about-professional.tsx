@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { GraduationCap, Award, BadgeCheck } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, scaleIn, staggerContainer, viewportConfig } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInRight, fadeInUp, scaleIn, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const qualifications = [
   { text: "Graduada em Enfermagem – UFRJ", year: "2006" },
@@ -34,9 +34,9 @@ export function AboutProfessional() {
           {/* Content */}
           <motion.div 
             variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="lg:col-span-7 order-2 lg:order-1"
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -70,9 +70,9 @@ export function AboutProfessional() {
                 <motion.div 
                   className="space-y-3"
                   variants={staggerContainer}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={viewportConfig}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={viewport}
                 >
                   {qualifications.map((item, index) => (
                     <motion.div 
@@ -103,9 +103,9 @@ export function AboutProfessional() {
                 <motion.div 
                   className="flex flex-wrap gap-2"
                   variants={staggerContainer}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={viewportConfig}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={viewport}
                 >
                   {courses.map((item, index) => (
                     <motion.span
@@ -124,9 +124,9 @@ export function AboutProfessional() {
           {/* Image */}
           <motion.div 
             variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="lg:col-span-5 order-1 lg:order-2"
           >
             <div className="relative">
@@ -145,24 +145,6 @@ export function AboutProfessional() {
               {/* Decorative elements - Hidden on mobile */}
               <div className="hidden md:block absolute -top-4 -right-4 w-32 h-32 border-2 border-primary/20 rounded-2xl -z-10" />
               
-              {/* Experience Badge - Hidden on mobile */}
-              <motion.div
-                variants={scaleIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportConfig}
-                className="hidden md:flex absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-stone-100"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white">
-                    <span className="text-xl font-serif font-bold">19</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-stone-500 uppercase tracking-wider font-medium">Anos de</p>
-                    <p className="text-stone-800 font-serif text-lg">Experiência</p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>

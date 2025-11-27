@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Sparkles, Heart, Brain, Droplets, Wind, Leaf, ArrowRight } from "lucide-react"
-import { fadeInLeft, fadeInUp, scaleIn, staggerContainer, viewportConfig } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInUp, scaleIn, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const benefits = [
   { text: "Redução de estresse e tensão", icon: Brain },
@@ -34,13 +34,13 @@ export function HeadSpa() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
             variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
           >
             <motion.span 
               variants={fadeInUp}
-              className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-6 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-white/90 mb-6 backdrop-blur-sm"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Exclusividade em Niterói
@@ -59,9 +59,9 @@ export function HeadSpa() {
             <motion.div 
               className="grid sm:grid-cols-2 gap-3 mb-10"
               variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
+              initial="initial"
+              whileInView="animate"
+              viewport={viewport}
             >
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon
@@ -82,13 +82,13 @@ export function HeadSpa() {
 
             <motion.div
               variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
+              initial="initial"
+              whileInView="animate"
+              viewport={viewport}
             >
               <Button 
                 size="lg" 
-                className="bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 h-14 px-8 rounded-full font-semibold group"
+                className="bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 h-14 px-8 rounded-full group"
                 asChild
               >
                 <Link href="/quiz">
@@ -101,9 +101,9 @@ export function HeadSpa() {
 
           <motion.div
             variants={scaleIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="relative"
           >
             {/* Main Image */}

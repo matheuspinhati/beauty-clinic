@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { cn } from "@/lib/utils"
 import { ArrowRight, Sparkles, Microscope, Zap, Target, Syringe, Leaf, FlaskConical, Droplets, Paintbrush } from "lucide-react"
-import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
+import { fadeInUp, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const services = {
   tricologia: [
@@ -88,9 +88,9 @@ export function Services() {
       <Container className="relative z-10">
         <motion.div 
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -109,7 +109,7 @@ export function Services() {
             <button
               onClick={() => setActiveTab("tricologia")}
               className={cn(
-                "relative px-8 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 overflow-hidden",
+                "relative px-8 py-3.5 rounded-xl text-sm transition-all duration-300 overflow-hidden",
                 activeTab === "tricologia"
                   ? "text-white"
                   : "text-stone-600 hover:text-stone-800 hover:bg-stone-50"
@@ -130,7 +130,7 @@ export function Services() {
             <button
               onClick={() => setActiveTab("estetica")}
               className={cn(
-                "relative px-8 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 overflow-hidden",
+                "relative px-8 py-3.5 rounded-xl text-sm transition-all duration-300 overflow-hidden",
                 activeTab === "estetica"
                   ? "text-white"
                   : "text-stone-600 hover:text-stone-800 hover:bg-stone-50"
@@ -154,8 +154,8 @@ export function Services() {
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
           variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
+          initial="initial"
+          animate="animate"
           key={activeTab} // Reset stagger on tab change
         >
           <AnimatePresence mode="wait">
@@ -189,7 +189,7 @@ export function Services() {
                       </p>
                       <Link 
                         href="/quiz"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
+                        className="inline-flex items-center gap-2 text-sm  text-primary opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                       >
                         Agendar
                         <ArrowRight className="w-4 h-4" />

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Sparkles, ArrowRight, Star, CheckCircle2 } from "lucide-react"
-import { fadeInUp, scaleIn, fadeInRight, staggerContainer } from "@/lib/animation-variants"
+import { fadeInUp, scaleIn, fadeInRight, staggerContainer, viewport } from "@/lib/animation-variants"
 
 export function Hero() {
   return (
@@ -29,8 +29,8 @@ export function Hero() {
           <motion.div 
             className="max-w-2xl text-center lg:text-left space-y-8 order-2 lg:order-1"
             variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
+            initial="initial"
+            animate="animate"
           >
             <motion.div variants={fadeInUp}>
               {/* Badge */}
@@ -114,8 +114,8 @@ export function Hero() {
           {/* Hero Image */}
           <motion.div
             variants={fadeInRight}
-            initial="hidden"
-            animate="visible"
+            initial="initial"
+            animate="animate"
             className="relative order-1 lg:order-2"
           >
             <div className="relative">

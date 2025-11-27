@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Sparkles, ArrowRight, Check } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const indications = [
   "Linhas finas e rugas",
@@ -28,9 +28,9 @@ export function FacialAesthetics() {
           {/* Image Column */}
           <motion.div
             variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="order-2 lg:order-1"
           >
             <div className="relative">
@@ -58,9 +58,9 @@ export function FacialAesthetics() {
           {/* Content Column */}
           <motion.div
             variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="order-1 lg:order-2"
           >
             <motion.span 
@@ -91,9 +91,9 @@ export function FacialAesthetics() {
               <motion.div 
                 className="grid grid-cols-2 gap-3"
                 variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportConfig}
+                initial="initial"
+                whileInView="animate"
+                viewport={viewport}
               >
                 {indications.map((item, index) => (
                   <motion.div 
@@ -110,9 +110,9 @@ export function FacialAesthetics() {
 
             <motion.div
               variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
+              initial="initial"
+              whileInView="animate"
+              viewport={viewport}
             >
               <Button 
                 variant="premium" 

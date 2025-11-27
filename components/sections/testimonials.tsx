@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Star, Quote } from "lucide-react"
-import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
+import { fadeInUp, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const testimonials = [
   {
@@ -42,9 +42,9 @@ export function Testimonials() {
       <Container className="relative z-10">
         <motion.div 
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -62,9 +62,9 @@ export function Testimonials() {
         <motion.div 
           className="grid md:grid-cols-3 gap-6 lg:gap-8"
           variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
         >
           {testimonials.map((item, index) => (
             <motion.div
@@ -115,9 +115,9 @@ export function Testimonials() {
         {/* Trust Badge */}
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
           className="mt-12 text-center"
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-stone-200 shadow-sm">

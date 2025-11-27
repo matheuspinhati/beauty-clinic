@@ -56,18 +56,14 @@ export function Header() {
       <Container>
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" legacyBehavior passHref>
-            <motion.a 
-              className="group relative"
+          <Link href="/" className="group relative">
+            <motion.img 
+              src="/logo.png" 
+              alt="Bruel Beauty Clinic" 
+              className="h-12 md:h-14 w-auto"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <img 
-                src="/logo.png" 
-                alt="Bruel Beauty Clinic" 
-                className="h-12 md:h-14 w-auto"
-              />
-            </motion.a>
+            />
           </Link>
 
           {/* Desktop Navigation */}

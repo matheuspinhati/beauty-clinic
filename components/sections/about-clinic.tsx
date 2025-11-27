@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Sparkles, Microscope, Leaf, Heart, Users, Shield } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, viewportConfig, staggerContainer } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInRight, fadeInUp, viewport, staggerContainer } from "@/lib/animation-variants"
 
 const differentials = [
   { text: "Protocolos exclusivos de tricologia", icon: Microscope },
@@ -26,9 +26,9 @@ export function AboutClinic() {
           {/* Image Grid - Enhanced */}
           <motion.div 
             variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="relative"
           >
             {/* Main Image */}
@@ -43,24 +43,6 @@ export function AboutClinic() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
               </div>
               
-              {/* Floating Stats Card - Hidden on mobile */}
-              <motion.div
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportConfig}
-                className="hidden md:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 border border-stone-100"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white">
-                    <span className="text-xl font-serif font-bold">19</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-stone-500 uppercase tracking-wider font-medium">Anos de</p>
-                    <p className="text-stone-800 font-serif text-lg">Experiência</p>
-                  </div>
-                </div>
-              </motion.div>
               
               {/* Decorative element - Hidden on mobile */}
               <div className="hidden md:block absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
@@ -70,9 +52,9 @@ export function AboutClinic() {
           {/* Content - Enhanced */}
           <motion.div
             variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
           >
             <motion.span 
               variants={fadeInUp}
@@ -100,9 +82,9 @@ export function AboutClinic() {
             <motion.div 
               className="grid sm:grid-cols-2 gap-4"
               variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
+              initial="initial"
+              whileInView="animate"
+              viewport={viewport}
             >
               {differentials.map((item, index) => {
                 const Icon = item.icon

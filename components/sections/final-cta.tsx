@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Instagram, MapPin, MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react"
-import { fadeInUp, fadeIn, viewportConfig, staggerContainer } from "@/lib/animation-variants"
+import { fadeInUp, fadeIn, viewport, staggerContainer } from "@/lib/animation-variants"
 
 export function FinalCTA() {
   return (
@@ -34,9 +34,9 @@ export function FinalCTA() {
         <motion.div 
           className="max-w-4xl mx-auto text-center space-y-8"
           variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
         >
           {/* Badge */}
           <motion.div variants={fadeInUp}>
@@ -70,7 +70,7 @@ export function FinalCTA() {
           >
             <Button 
               size="lg" 
-              className="h-14 px-8 text-base w-full sm:w-auto bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-full font-semibold group" 
+              className="h-14 px-8 text-base w-full sm:w-auto bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-full  group" 
               asChild
             >
               <Link href="/quiz">
@@ -81,7 +81,7 @@ export function FinalCTA() {
             </Button>
             <Button 
               size="lg" 
-              className="h-14 px-8 text-base w-full sm:w-auto bg-white/10 border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full font-semibold backdrop-blur-sm transition-all duration-300" 
+              className="h-14 px-8 text-base w-full sm:w-auto bg-white/10 border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full  backdrop-blur-sm transition-all duration-300" 
               asChild
             >
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">

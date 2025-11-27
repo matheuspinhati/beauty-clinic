@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { ClipboardList, Search, FileText, Stethoscope, Calendar, TrendingUp } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, viewportConfig } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInRight, fadeInUp, viewport } from "@/lib/animation-variants"
 
 const steps = [
   {
@@ -55,9 +55,9 @@ export function TrichologyJourney() {
       <Container className="relative z-10">
         <motion.div 
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">
@@ -81,9 +81,9 @@ export function TrichologyJourney() {
               <motion.div
                 key={index}
                 variants={isEven ? fadeInLeft : fadeInRight}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ ...viewportConfig, margin: "-100px" }}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ ...viewport, margin: "-100px" }}
                 className="relative mb-12 last:mb-0"
               >
                 <div className={`flex items-center gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
@@ -134,9 +134,9 @@ export function TrichologyJourney() {
         {/* Premium CTA Banner */}
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
           className="relative mt-20 overflow-hidden rounded-3xl"
         >
           {/* Animated Background */}

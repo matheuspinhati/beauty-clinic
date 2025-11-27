@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { MapPin, Clock, Phone, Navigation, Car, Building2 } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, viewportConfig } from "@/lib/animation-variants"
+import { fadeInLeft, fadeInRight, fadeInUp, viewport } from "@/lib/animation-variants"
 
 const neighborhoods = [
   "Centro", "Ingá", "Icaraí", "Santa Rosa", "Charitas", "São Francisco", "Piratininga", "Itaipu", "São Gonçalo"
@@ -21,9 +21,9 @@ export function Location() {
         {/* Section Header */}
         <motion.div
           variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportConfig}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewport}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -42,9 +42,9 @@ export function Location() {
           {/* Info Cards - Left */}
           <motion.div
             variants={fadeInLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="lg:col-span-2 space-y-5"
           >
             {/* Address Card */}
@@ -103,7 +103,7 @@ export function Location() {
                   </p>
                   <Link 
                     href="/quiz"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary font-semibold text-sm hover:bg-stone-100 transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm hover:bg-stone-100 transition-colors"
                   >
                     (21) 97251-3296
                     <Navigation className="w-4 h-4" />
@@ -134,9 +134,9 @@ export function Location() {
           {/* Map - Right */}
           <motion.div
             variants={fadeInRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
+            initial="initial"
+            whileInView="animate"
+            viewport={viewport}
             className="lg:col-span-3"
           >
             <div className="h-[520px] lg:h-full lg:min-h-[580px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-stone-200 relative group">
