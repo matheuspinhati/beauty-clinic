@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
+import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { GraduationCap, Award, BadgeCheck } from "lucide-react"
@@ -132,7 +133,13 @@ export function AboutProfessional() {
             <div className="relative">
               {/* Main Image */}
               <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-stone-200 relative shadow-2xl ring-1 ring-stone-200/50">
-                <img src="/bruna.JPG" alt="Bruna Rocha da Silva" className="w-full h-full object-cover" />
+                <Image 
+                  src="/bruna.JPG" 
+                  alt="Bruna Rocha da Silva" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
                 
                 {/* Name overlay */}

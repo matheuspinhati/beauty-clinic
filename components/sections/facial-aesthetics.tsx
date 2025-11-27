@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import Link from "next/link"
+import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
@@ -35,7 +36,13 @@ export function FacialAesthetics() {
           >
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-stone-200/50 relative">
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
+                <Image 
+                  src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+                  alt="Estética Facial Natural"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
                 

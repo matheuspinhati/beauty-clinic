@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import Link from "next/link"
+import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
@@ -40,7 +41,7 @@ export function HeadSpa() {
           >
             <motion.span 
               variants={fadeInUp}
-              className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-xs font-semibold tracking-[0.2em] uppercase text-white/90 mb-6 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-6 backdrop-blur-sm"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Exclusividade em Niterói
@@ -88,7 +89,7 @@ export function HeadSpa() {
             >
               <Button 
                 size="lg" 
-                className="bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 h-14 px-8 rounded-full group"
+                className="bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 h-14 px-8 rounded-full font-semibold group"
                 asChild
               >
                 <Link href="/quiz">
@@ -109,7 +110,13 @@ export function HeadSpa() {
             {/* Main Image */}
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-                <img src="/head-spa.jpg" alt="Head Spa Experience" className="w-full h-full object-cover" />
+                <Image 
+                  src="/head-spa.jpg" 
+                  alt="Head Spa Experience" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
               </div>

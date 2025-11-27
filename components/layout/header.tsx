@@ -4,10 +4,13 @@ import * as React from "react"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+
+const MotionImage = motion(Image)
 
 const navLinks = [
   { name: "Sobre", href: "#sobre" },
@@ -57,9 +60,11 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group relative">
-            <motion.img 
+            <MotionImage 
               src="/logo.png" 
               alt="Bruel Beauty Clinic" 
+              width={168}
+              height={56}
               className="h-12 md:h-14 w-auto"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}

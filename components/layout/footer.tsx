@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { Instagram, Facebook, MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react"
 
@@ -31,9 +32,11 @@ export function Footer() {
             {/* Brand Column */}
             <div className="lg:col-span-4">
               <Link href="/" className="inline-block group">
-                <img 
+                <Image 
                   src="/logo.png" 
                   alt="Bruel Beauty Clinic" 
+                  width={192}
+                  height={64}
                   className="h-16 w-auto"
                 />
               </Link>

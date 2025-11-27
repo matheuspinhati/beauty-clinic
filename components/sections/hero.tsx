@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Sparkles, ArrowRight, Star, CheckCircle2 } from "lucide-react"
@@ -14,7 +15,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Static gradient orbs for mobile, animated on desktop */}
         <div className="absolute -top-[20%] -right-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-3xl opacity-30" />
-        <div className="absolute -bottom-[20%] -left-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-stone-200/50 rounded-full blur-3xl opacity-30" />
+        <div className="absolute -bottom-[20%] -left-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-stone-200/5 rounded-full blur-3xl opacity-30" />
         
         {/* Decorative elements - hidden on mobile */}
         <div className="hidden md:block absolute top-1/4 left-[15%] w-2 h-2 bg-primary/20 rounded-full" />
@@ -121,10 +122,13 @@ export function Hero() {
             <div className="relative">
               {/* Main Image */}
               <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-stone-200/50">
-                <img 
+                <Image 
                   src="/hero.png" 
                   alt="Bruel Beauty Clinic" 
-                  className="object-cover w-full h-full"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />

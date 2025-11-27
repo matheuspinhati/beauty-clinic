@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
+import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Sparkles, Microscope, Leaf, Heart, Users, Shield } from "lucide-react"
@@ -33,11 +34,13 @@ export function AboutClinic() {
           >
             {/* Main Image */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-stone-100 shadow-2xl ring-1 ring-stone-200/50">
-                <img 
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-stone-100 shadow-2xl ring-1 ring-stone-200/50 relative">
+                <Image 
                   src="/procedure-bruna.jpeg" 
                   alt="Bruel Beauty Clinic" 
-                  className="w-full h-full object-cover" 
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
