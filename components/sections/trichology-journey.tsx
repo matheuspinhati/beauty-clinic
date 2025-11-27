@@ -281,7 +281,7 @@ export function TrichologyJourney() {
                   className="absolute inset-0 rounded-full"
                 />
                 
-                <span className="relative z-10">Agendar Consulta Inicial</span>
+                <span className="relative z-10">AGENDAR CONSULTA</span>
                 <motion.svg
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}

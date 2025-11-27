@@ -31,10 +31,10 @@ export function Location() {
             Localização
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-stone-800 mb-4">
-            Venha nos Visitar
+            Visite nossa clínica
           </h2>
           <p className="text-stone-600 text-lg">
-            Estamos no coração de Niterói, prontos para recebê-la
+            Estamos localizados no coração de Niterói, prontos para recebê-la!
           </p>
         </motion.div>
 

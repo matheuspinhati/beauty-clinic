@@ -52,8 +52,7 @@ export function FinalCTA() {
             variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif leading-tight"
           >
-            Agende sua consulta e inicie sua{" "}
-            <span className="italic text-stone-300 block mt-2">transformação com segurança.</span>
+            Pronto para agendar sua consulta?
           </motion.h2>
           
           {/* Subtitle */}
