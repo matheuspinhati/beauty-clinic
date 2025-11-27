@@ -10,7 +10,7 @@ import { fadeInUp, scaleIn, fadeInRight, staggerContainer, viewport } from "@/li
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-0 bg-gradient-to-br from-stone-50 via-white to-stone-50">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-30 md:pt-20 lg:pt-0 bg-gradient-to-br from-stone-50 via-white to-stone-50">
       {/* Background Elements - Simplified for mobile performance */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Static gradient orbs for mobile, animated on desktop */}

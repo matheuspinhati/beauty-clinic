@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from "motion/react"
 import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
-import { Plus, Minus, HelpCircle, MessageCircle } from "lucide-react"
+import { Plus, Minus, HelpCircle } from "lucide-react"
 import { fadeInLeft, fadeInUp, staggerContainer, viewport } from "@/lib/animation-variants"
+import { RiWhatsappLine } from "@remixicon/react"
 
 const faqs = [
   {
@@ -65,7 +66,7 @@ export function FAQ() {
             <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-6 h-6 text-primary" />
+                  <RiWhatsappLine className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-serif text-lg text-stone-800 mb-1">Ainda tem dúvidas?</h3>

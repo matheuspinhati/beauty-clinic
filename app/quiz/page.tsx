@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, ArrowLeft, Check, Sparkles, Leaf, Smile, Phone, User, MessageCircle } from "lucide-react"
 import Link from "next/link"
+import { RiWhatsappLine } from "@remixicon/react"
 
 type Step = "interest" | "name" | "phone" | "complete"
 
@@ -91,9 +92,9 @@ export default function QuizPage() {
   const getWhatsAppLink = () => {
     const message = encodeURIComponent(
       `Olá! Vim pelo site da Bruel Beauty Clinic.\n\n` +
-      `👤 Nome: ${formData.name}\n` +
-      `📱 Telefone: ${formData.phone}\n` +
-      `✨ Interesse: ${getInterestLabel()}\n\n` +
+      `Nome: ${formData.name}\n` +
+      `Telefone: ${formData.phone}\n` +
+      `Interesse: ${getInterestLabel()}\n\n` +
       `Gostaria de agendar uma consulta!`
     )
     return `https://wa.me/5521972513296?text=${message}`
@@ -439,7 +440,7 @@ export default function QuizPage() {
                   href={getWhatsAppLink()}
                   className="inline-flex items-center gap-2 text-primary hover:underline"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <RiWhatsappLine className="w-5 h-5" />
                   Clique aqui se não for redirecionado
                 </motion.a>
               </motion.div>

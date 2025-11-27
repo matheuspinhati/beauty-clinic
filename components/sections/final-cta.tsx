@@ -7,10 +7,11 @@ import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Instagram, MapPin, MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react"
 import { fadeInUp, fadeIn, viewport, staggerContainer } from "@/lib/animation-variants"
+import { RiWhatsappLine } from "@remixicon/react"
 
 export function FinalCTA() {
   return (
-    <Section className="bg-primary text-stone-50 py-24 md:py-32 relative overflow-hidden">
+    <Section className="bg-primary text-stone-50 py-16 sm:py-24 md:py-32 relative overflow-hidden">
       {/* Background Elements - Static for mobile performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient orbs - static */}
@@ -32,7 +33,7 @@ export function FinalCTA() {
 
       <Container className="relative z-10">
         <motion.div 
-          className="max-w-4xl mx-auto text-center space-y-8"
+          className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -49,7 +50,7 @@ export function FinalCTA() {
           {/* Headline */}
           <motion.h2 
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif leading-tight"
           >
             Agende sua consulta e inicie sua{" "}
             <span className="italic text-stone-300 block mt-2">transformação com segurança.</span>
@@ -58,7 +59,7 @@ export function FinalCTA() {
           {/* Subtitle */}
           <motion.p
             variants={fadeInUp}
-            className="text-stone-300 text-lg max-w-2xl mx-auto"
+            className="text-stone-300 text-base sm:text-lg max-w-2xl mx-auto"
           >
             Protocolos científicos personalizados, atendimento humanizado e resultados comprovados em cada procedimento.
           </motion.p>
@@ -74,7 +75,7 @@ export function FinalCTA() {
               asChild
             >
               <Link href="/quiz">
-                <MessageCircle className="mr-2 w-5 h-5" />
+                <RiWhatsappLine className="mr-2 w-5 h-5" />
                 Agendar pelo WhatsApp
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>

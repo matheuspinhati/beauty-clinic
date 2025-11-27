@@ -12,10 +12,11 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { Location } from "@/components/sections/location";
 import { FAQ } from "@/components/sections/faq";
 import { FinalCTA } from "@/components/sections/final-cta";
+import WhatsappButton from "@/components/layout/whatsapp-button";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-50 selection:bg-stone-200">
+    <main className="min-h-screen relative bg-stone-50 selection:bg-stone-200">
       <Header />
       <Hero />
       <TreatmentsMarquee />
@@ -30,6 +31,7 @@ export default function Home() {
       <FAQ />
       <FinalCTA />
       <Footer />
+      <WhatsappButton/>
     </main>
   );
 }

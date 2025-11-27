@@ -99,7 +99,7 @@ export function Testimonials() {
                     {item.initials}
                   </div>
                   <div>
-                    <p className="font-serif text-stone-800 font-medium">
+                    <p className="text-stone-800 font-medium">
                       {item.name}
                     </p>
                     <p className="text-xs text-stone-500 uppercase tracking-wider">
