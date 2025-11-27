@@ -18,28 +18,14 @@ const benefits = [
 export function HeadSpa() {
   return (
     <Section id="head-spa" className="bg-primary text-stone-50 overflow-hidden relative">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, -20, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-20 right-20 w-96 h-96 bg-stone-300/5 rounded-full blur-3xl"
-        />
-        {/* Decorative dots */}
-        <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-white/20 rounded-full" />
-        <div className="absolute top-1/3 left-1/3 w-1.5 h-1.5 bg-white/15 rounded-full" />
-        <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-white/20 rounded-full" />
+      {/* Background elements - Static for better mobile performance */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-48 md:w-72 h-48 md:h-72 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-64 md:w-96 h-64 md:h-96 bg-stone-300/5 rounded-full blur-3xl" />
+        {/* Decorative dots - hidden on mobile */}
+        <div className="hidden md:block absolute top-1/4 right-1/4 w-1 h-1 bg-white/20 rounded-full" />
+        <div className="hidden md:block absolute top-1/3 left-1/3 w-1.5 h-1.5 bg-white/15 rounded-full" />
+        <div className="hidden md:block absolute bottom-1/4 left-1/4 w-1 h-1 bg-white/20 rounded-full" />
       </div>
       
       <Container className="relative z-10">
@@ -70,24 +56,20 @@ export function HeadSpa() {
               O <strong className="text-white">Head Spa Bruel</strong> combina saúde capilar e relaxamento profundo em uma experiência sensorial premium. Um dos poucos Head Spa da região — e o único com integração completa à tricologia.
             </p>
             
-            {/* Benefits Grid - Enhanced */}
+            {/* Benefits Grid - Optimized for mobile */}
             <div className="grid sm:grid-cols-2 gap-3 mb-10">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon
                 return (
-                  <motion.div 
+                  <div 
                     key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 transition-colors duration-200"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-stone-300 group-hover:text-white group-hover:bg-white/20 transition-all">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-stone-300">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <span className="text-sm text-stone-300 group-hover:text-white transition-colors">{benefit.text}</span>
-                  </motion.div>
+                    <span className="text-sm text-stone-300">{benefit.text}</span>
+                  </div>
                 )
               })}
             </div>
@@ -126,12 +108,8 @@ export function HeadSpa() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
               </div>
               
-              {/* Floating Badge - Top */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-stone-100"
-              >
+              {/* Floating Badge - Top - Hidden on mobile */}
+              <div className="hidden md:block absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-stone-100">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Sparkles className="w-5 h-5 text-primary" />
@@ -141,14 +119,10 @@ export function HeadSpa() {
                     <p className="text-stone-800 font-serif font-medium">Premium</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
               
-              {/* Floating Badge - Bottom */}
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/20"
-              >
+              {/* Floating Badge - Bottom - Hidden on mobile */}
+              <div className="hidden md:block absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/20">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white">
                     <span className="text-lg font-serif font-bold">90</span>
@@ -158,7 +132,7 @@ export function HeadSpa() {
                     <p className="text-white font-serif">Relaxamento</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

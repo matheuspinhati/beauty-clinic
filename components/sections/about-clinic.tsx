@@ -42,13 +42,13 @@ export function AboutClinic() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
               </div>
               
-              {/* Floating Stats Card */}
+              {/* Floating Stats Card - Hidden on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 border border-stone-100"
+                className="hidden md:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 border border-stone-100"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white">
@@ -61,8 +61,8 @@ export function AboutClinic() {
                 </div>
               </motion.div>
               
-              {/* Decorative element */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
+              {/* Decorative element - Hidden on mobile */}
+              <div className="hidden md:block absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
             </div>
           </motion.div>
 

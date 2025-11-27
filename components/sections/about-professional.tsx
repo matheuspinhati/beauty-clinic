@@ -135,16 +135,16 @@ export function AboutProfessional() {
                 </div>
               </div>
               
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-32 h-32 border-2 border-primary/20 rounded-2xl -z-10" />
+              {/* Decorative elements - Hidden on mobile */}
+              <div className="hidden md:block absolute -top-4 -right-4 w-32 h-32 border-2 border-primary/20 rounded-2xl -z-10" />
               
-              {/* Experience Badge */}
+              {/* Experience Badge - Hidden on mobile */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-stone-100"
+                className="hidden md:flex absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-stone-100"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white">

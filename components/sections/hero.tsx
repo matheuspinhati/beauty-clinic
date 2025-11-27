@@ -8,42 +8,16 @@ import { Sparkles, ArrowRight, Star, CheckCircle2 } from "lucide-react"
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-0 bg-gradient-to-br from-stone-50 via-white to-stone-50">
-      {/* Background Elements */}
+      {/* Background Elements - Simplified for mobile performance */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, 50, 0],
-            y: [0, 30, 0]
-          }}
-          transition={{ 
-            duration: 20, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-          className="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" 
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, -30, 0],
-            y: [0, -50, 0]
-          }}
-          transition={{ 
-            duration: 25, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute -bottom-[20%] -left-[10%] w-[800px] h-[800px] bg-stone-200/50 rounded-full blur-3xl" 
-        />
+        {/* Static gradient orbs for mobile, animated on desktop */}
+        <div className="absolute -top-[20%] -right-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-3xl opacity-30" />
+        <div className="absolute -bottom-[20%] -left-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-stone-200/50 rounded-full blur-3xl opacity-30" />
         
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-[15%] w-2 h-2 bg-primary/20 rounded-full" />
-        <div className="absolute top-1/3 right-[20%] w-1.5 h-1.5 bg-stone-300/40 rounded-full" />
-        <div className="absolute bottom-1/4 left-[30%] w-1 h-1 bg-primary/30 rounded-full" />
+        {/* Decorative elements - hidden on mobile */}
+        <div className="hidden md:block absolute top-1/4 left-[15%] w-2 h-2 bg-primary/20 rounded-full" />
+        <div className="hidden md:block absolute top-1/3 right-[20%] w-1.5 h-1.5 bg-stone-300/40 rounded-full" />
+        <div className="hidden md:block absolute bottom-1/4 left-[30%] w-1 h-1 bg-primary/30 rounded-full" />
       </div>
 
       <Container className="relative z-10">

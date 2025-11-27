@@ -9,55 +9,23 @@ import { Instagram, MapPin, MessageCircle, ArrowRight, Sparkles, Heart } from "l
 export function FinalCTA() {
   return (
     <Section className="bg-primary text-stone-50 py-24 md:py-32 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient orbs */}
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 40, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-stone-300/5 rounded-full blur-3xl"
-        />
+      {/* Background Elements - Static for mobile performance */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Gradient orbs - static */}
+        <div className="absolute -top-40 -right-40 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-stone-300/5 rounded-full blur-3xl" />
         
-        {/* Decorative elements */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 border border-white/5 rounded-full"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] border border-white/5 rounded-full"
-        />
+        {/* Decorative circles - hidden on mobile */}
+        <div className="hidden md:block absolute top-1/4 left-1/4 w-96 h-96 border border-white/5 rounded-full" />
+        <div className="hidden md:block absolute bottom-1/4 right-1/4 w-[500px] h-[500px] border border-white/5 rounded-full" />
         
-        {/* Floating sparkles */}
-        <motion.div
-          animate={{ opacity: [0.2, 0.8, 0.2], y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity }}
-          className="absolute top-20 left-[20%]"
-        >
+        {/* Decorative icons - hidden on mobile */}
+        <div className="hidden md:block absolute top-20 left-[20%]">
           <Sparkles className="w-4 h-4 text-white/30" />
-        </motion.div>
-        <motion.div
-          animate={{ opacity: [0.3, 1, 0.3], y: [0, -15, 0] }}
-          transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-          className="absolute bottom-32 right-[25%]"
-        >
+        </div>
+        <div className="hidden md:block absolute bottom-32 right-[25%]">
           <Heart className="w-3 h-3 text-white/20" />
-        </motion.div>
+        </div>
       </div>
 
       <Container className="relative z-10">

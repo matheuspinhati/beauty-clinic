@@ -76,18 +76,10 @@ export function Testimonials() {
                   </div>
                 </div>
                 
-                {/* Stars */}
+                {/* Stars - Static for better mobile performance */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(item.rating)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + index * 0.1 + i * 0.05 }}
-                    >
-                      <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    </motion.div>
+                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
                 
