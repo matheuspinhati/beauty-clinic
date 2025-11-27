@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Plus, Minus, HelpCircle, MessageCircle } from "lucide-react"
+import { fadeInLeft, fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
 
 const faqs = [
   {
@@ -41,10 +43,10 @@ export function FAQ() {
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Left Column - Header */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="lg:col-span-2"
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -68,28 +70,31 @@ export function FAQ() {
                 <div>
                   <h3 className="font-serif text-lg text-stone-800 mb-1">Ainda tem dúvidas?</h3>
                   <p className="text-sm text-stone-600 mb-3">Fale conosco pelo WhatsApp</p>
-                  <a 
+                  <Link 
                     href="/quiz"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
                   >
                     Enviar mensagem →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Right Column - FAQ Items */}
-          <div className="lg:col-span-3 space-y-3">
+          <motion.div 
+            className="lg:col-span-3 space-y-3"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  variants={fadeInUp}
                 >
                   <div 
                     className={`bg-white rounded-xl border overflow-hidden transition-all duration-300 ${
@@ -152,7 +157,7 @@ export function FAQ() {
                 </motion.div>
               )
             })}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </Section>

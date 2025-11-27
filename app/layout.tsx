@@ -1,6 +1,51 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+
+const garet = localFont({
+  src: [
+    {
+      path: "./fonts/Garet-Book.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Garet-Heavy.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-garet",
+  display: "swap",
+});
+
+const nimbus = localFont({
+  src: [
+    {
+      path: "./fonts/nimbus-roman-no9-l.regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/nimbus-roman-no9-l.regular-italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/nimbus-roman-no9-l.bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/nimbus-roman-no9-l.bold-italic.otf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-nimbus",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Bruel Beauty Clinic | Tricologia e Estética em Niterói",
@@ -27,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html lang="pt-BR" className={cn("scroll-smooth", garet.variable, nimbus.variable)}>
       <body
         className={cn(
           "font-sans antialiased bg-background text-foreground overflow-x-hidden"

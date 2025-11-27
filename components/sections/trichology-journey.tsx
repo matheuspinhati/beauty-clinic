@@ -1,9 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { ClipboardList, Search, FileText, Stethoscope, Calendar, TrendingUp } from "lucide-react"
+import { fadeInLeft, fadeInRight, fadeInUp, viewportConfig } from "@/lib/animation-variants"
 
 const steps = [
   {
@@ -52,10 +54,10 @@ export function TrichologyJourney() {
       
       <Container className="relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">
@@ -78,10 +80,10 @@ export function TrichologyJourney() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                variants={isEven ? fadeInLeft : fadeInRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ ...viewportConfig, margin: "-100px" }}
                 className="relative mb-12 last:mb-0"
               >
                 <div className={`flex items-center gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
@@ -131,10 +133,10 @@ export function TrichologyJourney() {
 
         {/* Premium CTA Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
           className="relative mt-20 overflow-hidden rounded-3xl"
         >
           {/* Animated Background */}
@@ -226,10 +228,7 @@ export function TrichologyJourney() {
           <div className="relative z-10 px-8 py-16 md:py-20 text-center">
             {/* Floating badge */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              variants={fadeInUp}
               className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm"
             >
               <motion.span
@@ -243,10 +242,7 @@ export function TrichologyJourney() {
             </motion.div>
 
             <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
+              variants={fadeInUp}
               className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-4 leading-tight"
             >
               Pronto para iniciar sua
@@ -255,23 +251,17 @@ export function TrichologyJourney() {
             </motion.h3>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
+              variants={fadeInUp}
               className="text-white/70 text-lg max-w-md mx-auto mb-10"
             >
               Agende sua avaliação inicial e descubra o protocolo ideal para você.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
+              variants={fadeInUp}
               className="inline-block"
             >
-          <a
+          <Link
             href="/quiz"
                 className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-primary font-bold text-lg overflow-hidden shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-105"
               >
@@ -303,15 +293,12 @@ export function TrichologyJourney() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </motion.svg>
-              </a>
+              </Link>
             </motion.div>
 
             {/* Trust indicators */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 1 }}
+              variants={fadeInUp}
               className="mt-10 flex flex-wrap items-center justify-center gap-6 text-white/50 text-sm"
             >
               <div className="flex items-center gap-2">

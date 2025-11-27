@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Instagram, Facebook, MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react"
 
@@ -29,13 +30,13 @@ export function Footer() {
           <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
             {/* Brand Column */}
             <div className="lg:col-span-4">
-              <a href="#" className="inline-block group">
+              <Link href="/" className="inline-block group">
                 <img 
                   src="/logo.png" 
                   alt="Bruel Beauty Clinic" 
                   className="h-16 w-auto"
                 />
-              </a>
+              </Link>
               <p className="mt-6 text-sm leading-relaxed text-stone-500 max-w-xs">
                 Tricologia especializada e estética natural em Niterói. Protocolos científicos, tecnologia avançada e experiência premium.
               </p>

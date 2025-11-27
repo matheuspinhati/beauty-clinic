@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { GraduationCap, Award, BadgeCheck } from "lucide-react"
+import { fadeInLeft, fadeInRight, fadeInUp, scaleIn, staggerContainer, viewportConfig } from "@/lib/animation-variants"
 
 const qualifications = [
   { text: "Graduada em Enfermagem – UFRJ", year: "2006" },
@@ -32,10 +33,10 @@ export function AboutProfessional() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="lg:col-span-7 order-2 lg:order-1"
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -66,14 +67,17 @@ export function AboutProfessional() {
                   </div>
                   <h3 className="font-serif text-xl text-stone-800">Formação Acadêmica</h3>
                 </div>
-                <div className="space-y-3">
+                <motion.div 
+                  className="space-y-3"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportConfig}
+                >
                   {qualifications.map((item, index) => (
                     <motion.div 
                       key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
+                      variants={fadeInLeft}
                       className="flex items-center gap-3 group"
                     >
                       <span className="flex-shrink-0 w-14 text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded text-center">
@@ -85,7 +89,7 @@ export function AboutProfessional() {
                       </span>
                     </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
               
               {/* Cursos - Tags Style */}
@@ -96,30 +100,33 @@ export function AboutProfessional() {
                   </div>
                   <h3 className="font-serif text-xl text-stone-800">Cursos e Aprimoramentos</h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <motion.div 
+                  className="flex flex-wrap gap-2"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportConfig}
+                >
                   {courses.map((item, index) => (
                     <motion.span
                       key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.05 }}
+                      variants={scaleIn}
                       className="px-4 py-2 rounded-full bg-stone-50 border border-stone-200 text-sm text-stone-600 hover:border-primary/30 hover:text-primary transition-all cursor-default"
                     >
                       {item}
                     </motion.span>
                   ))}
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
 
           {/* Image */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="lg:col-span-5 order-1 lg:order-2"
           >
             <div className="relative">
@@ -140,10 +147,10 @@ export function AboutProfessional() {
               
               {/* Experience Badge - Hidden on mobile */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
                 className="hidden md:flex absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-stone-100"
               >
                 <div className="flex items-center gap-3">

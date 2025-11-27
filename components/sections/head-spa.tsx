@@ -1,10 +1,12 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Sparkles, Heart, Brain, Droplets, Wind, Leaf, ArrowRight } from "lucide-react"
+import { fadeInLeft, fadeInUp, scaleIn, staggerContainer, viewportConfig } from "@/lib/animation-variants"
 
 const benefits = [
   { text: "Redução de estresse e tensão", icon: Brain },
@@ -31,16 +33,13 @@ export function HeadSpa() {
       <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
           >
             <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              variants={fadeInUp}
               className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-6 backdrop-blur-sm"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -57,47 +56,54 @@ export function HeadSpa() {
             </p>
             
             {/* Benefits Grid - Optimized for mobile */}
-            <div className="grid sm:grid-cols-2 gap-3 mb-10">
+            <motion.div 
+              className="grid sm:grid-cols-2 gap-3 mb-10"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon
                 return (
-                  <div 
+                  <motion.div 
                     key={index}
+                    variants={fadeInUp}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 transition-colors duration-200"
                   >
                     <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-stone-300">
                       <Icon className="w-4 h-4" />
                     </div>
                     <span className="text-sm text-stone-300">{benefit.text}</span>
-                  </div>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
             >
               <Button 
                 size="lg" 
                 className="bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 h-14 px-8 rounded-full font-semibold group"
                 asChild
               >
-                <a href="/quiz">
+                <Link href="/quiz">
                   Agendar Experiência
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
             </motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={scaleIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="relative"
           >
             {/* Main Image */}

@@ -1,10 +1,12 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Sparkles, ArrowRight, Check } from "lucide-react"
+import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
 
 const indications = [
   "Linhas finas e rugas",
@@ -25,10 +27,10 @@ export function FacialAesthetics() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Column */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="order-2 lg:order-1"
           >
             <div className="relative">
@@ -55,17 +57,14 @@ export function FacialAesthetics() {
 
           {/* Content Column */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="order-1 lg:order-2"
           >
             <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              variants={fadeInUp}
               className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -89,28 +88,31 @@ export function FacialAesthetics() {
                 </span>
                 Indicado para:
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <motion.div 
+                className="grid grid-cols-2 gap-3"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
+              >
                 {indications.map((item, index) => (
                   <motion.div 
                     key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 + index * 0.05 }}
+                    variants={fadeInLeft}
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-stone-50 transition-colors"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     <span className="text-sm text-stone-600">{item}</span>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
             >
               <Button 
                 variant="premium" 
@@ -118,10 +120,10 @@ export function FacialAesthetics() {
                 className="rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
                 asChild
               >
-                <a href="/quiz">
+                <Link href="/quiz">
                   Agendar Avaliação Facial
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
             </motion.div>
           </motion.div>

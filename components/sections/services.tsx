@@ -1,11 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { cn } from "@/lib/utils"
 import { ArrowRight, Sparkles, Microscope, Zap, Target, Syringe, Leaf, FlaskConical, Droplets, Paintbrush } from "lucide-react"
+import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/animation-variants"
 
 const services = {
   tricologia: [
@@ -85,10 +87,10 @@ export function Services() {
       
       <Container className="relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6">
@@ -149,21 +151,20 @@ export function Services() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          key={activeTab} // Reset stagger on tab change
+        >
           <AnimatePresence mode="wait">
             {services[activeTab].map((service, index) => {
               const Icon = service.icon
               return (
                 <motion.div
                   key={`${activeTab}-${service.title}`}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ 
-                    duration: 0.25, 
-                    delay: index * 0.03,
-                    ease: "easeOut"
-                  }}
+                  variants={fadeInUp}
                   className="group"
                 >
                   {/* Card */}
@@ -186,13 +187,13 @@ export function Services() {
                       <p className="text-stone-500 text-sm leading-relaxed mb-5">
                         {service.description}
                       </p>
-                      <a 
-href="/quiz"
+                      <Link 
+                        href="/quiz"
                         className="inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                       >
                         Agendar
                         <ArrowRight className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </div>
 
                     {/* Decorative corner */}
@@ -202,7 +203,7 @@ href="/quiz"
               )
             })}
           </AnimatePresence>
-        </div>
+        </motion.div>
       </Container>
     </Section>
   )

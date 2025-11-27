@@ -1,9 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Sparkles, ArrowRight, Star, CheckCircle2 } from "lucide-react"
+import { fadeInUp, scaleIn, fadeInRight, staggerContainer } from "@/lib/animation-variants"
 
 export function Hero() {
   return (
@@ -24,17 +26,16 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Text Content */}
-          <div className="max-w-2xl text-center lg:text-left space-y-8 order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+          <motion.div 
+            className="max-w-2xl text-center lg:text-left space-y-8 order-2 lg:order-1"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div variants={fadeInUp}>
               {/* Badge */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
+                variants={scaleIn}
                 className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white border border-stone-200 text-xs font-bold tracking-[0.15em] uppercase text-primary mb-6 shadow-sm"
               >
                 <Sparkles className="w-3.5 h-3.5" />
@@ -57,9 +58,7 @@ export function Hero() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              variants={fadeInUp}
               className="text-lg lg:text-xl text-stone-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
               Protocolos científicos, tecnologia avançada e uma experiência sensorial única para realçar sua melhor versão com <strong className="text-stone-800">segurança e elegância</strong>.
@@ -67,9 +66,7 @@ export function Hero() {
 
             {/* Trust badges */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              variants={fadeInUp}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-stone-500"
             >
               <div className="flex items-center gap-1.5">
@@ -83,9 +80,7 @@ export function Hero() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              variants={fadeInUp}
               className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4 pt-2"
             >
               <Button 
@@ -94,14 +89,14 @@ export function Hero() {
                 className="h-14 px-8 text-base relative overflow-hidden group rounded-full shadow-xl hover:shadow-2xl transition-all duration-300" 
                 asChild
               >
-                <a href="/quiz">
+                <Link href="/quiz">
                   <span className="relative z-10 flex items-center gap-2">
                     Agendar Consulta
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                   {/* Shine Effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent z-0" />
-                </a>
+                </Link>
               </Button>
               <Button 
                 variant="outline" 
@@ -114,13 +109,13 @@ export function Hero() {
                 </a>
               </Button>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Hero Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            variants={fadeInRight}
+            initial="hidden"
+            animate="visible"
             className="relative order-1 lg:order-2"
           >
             <div className="relative">
@@ -141,7 +136,7 @@ export function Hero() {
               {/* Floating Badge - Experience */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", type: "tween" }}
                 className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-stone-100 hidden md:block"
               >
                 <div className="flex items-center gap-4">
@@ -158,7 +153,7 @@ export function Hero() {
               {/* Floating Badge - Top Right */}
               <motion.div 
                 animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1, type: "tween" }}
                 className="absolute -top-4 -right-4 bg-white py-3 px-4 rounded-xl shadow-lg border border-stone-100 hidden lg:flex items-center gap-2"
               >
                 <div className="flex -space-x-1">

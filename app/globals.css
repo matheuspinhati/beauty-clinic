@@ -23,8 +23,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-sans: "Garet", sans-serif;
-  --font-serif: "Vogue", serif;
+  --font-sans: var(--font-garet), sans-serif;
+  --font-serif: var(--font-nimbus), serif;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -85,31 +85,6 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
-}
-
-/* Custom Fonts via @font-face */
-@font-face {
-  font-family: "Garet";
-  src: url("/fonts/Garet-Book.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Garet";
-  src: url("/fonts/Garet-Heavy.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vogue";
-  src: url("/fonts/Vogue.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
 
 :root {

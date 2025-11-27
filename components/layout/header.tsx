@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
@@ -55,18 +56,19 @@ export function Header() {
       <Container>
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.a 
-            href="#" 
-            className="group relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <img 
-              src="/logo.png" 
-              alt="Bruel Beauty Clinic" 
-              className="h-12 md:h-14 w-auto"
-            />
-          </motion.a>
+          <Link href="/" legacyBehavior passHref>
+            <motion.a 
+              className="group relative"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <img 
+                src="/logo.png" 
+                alt="Bruel Beauty Clinic" 
+                className="h-12 md:h-14 w-auto"
+              />
+            </motion.a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -96,10 +98,10 @@ export function Header() {
             })}
             <div className="ml-4 pl-4 border-l border-stone-200">
               <Button variant="premium" size="sm" className="rounded-full shadow-lg hover:shadow-xl" asChild>
-                <a href="/quiz">
+                <Link href="/quiz">
                   <span className="mr-2">✦</span>
                   Agendar
-                </a>
+                </Link>
               </Button>
             </div>
           </nav>
@@ -186,10 +188,10 @@ export function Header() {
                 className="mt-6 pt-6 border-t border-stone-100"
               >
                 <Button variant="premium" className="w-full h-14 rounded-xl text-base" asChild>
-                  <a href="/quiz">
+                  <Link href="/quiz">
                     <span className="mr-2">✦</span>
                     Agendar Consulta
-                  </a>
+                  </Link>
                 </Button>
               </motion.div>
             </Container>

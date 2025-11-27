@@ -1,10 +1,12 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
+import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Instagram, MapPin, MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react"
+import { fadeInUp, fadeIn, viewportConfig, staggerContainer } from "@/lib/animation-variants"
 
 export function FinalCTA() {
   return (
@@ -29,14 +31,15 @@ export function FinalCTA() {
       </div>
 
       <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center space-y-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+        >
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div variants={fadeInUp}>
             <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-[0.2em] uppercase text-white/90 backdrop-blur-sm">
               <Sparkles className="w-3.5 h-3.5" />
               Sua transformação começa aqui
@@ -45,10 +48,7 @@ export function FinalCTA() {
 
           {/* Headline */}
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            variants={fadeInUp}
             className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight"
           >
             Agende sua consulta e inicie sua{" "}
@@ -57,10 +57,7 @@ export function FinalCTA() {
           
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            variants={fadeInUp}
             className="text-stone-300 text-lg max-w-2xl mx-auto"
           >
             Protocolos científicos personalizados, atendimento humanizado e resultados comprovados em cada procedimento.
@@ -68,10 +65,7 @@ export function FinalCTA() {
           
           {/* Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            variants={fadeInUp}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
           >
             <Button 
@@ -79,11 +73,11 @@ export function FinalCTA() {
               className="h-14 px-8 text-base w-full sm:w-auto bg-white text-primary hover:bg-stone-100 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-full font-semibold group" 
               asChild
             >
-              <a href="/quiz">
+              <Link href="/quiz">
                 <MessageCircle className="mr-2 w-5 h-5" />
                 Agendar pelo WhatsApp
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </Button>
             <Button 
               size="lg" 
@@ -99,10 +93,7 @@ export function FinalCTA() {
 
           {/* Trust indicators */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            variants={fadeIn}
             className="pt-12 flex flex-wrap items-center justify-center gap-8 text-white/50 text-sm"
           >
             <div className="flex items-center gap-2">
@@ -118,7 +109,7 @@ export function FinalCTA() {
               <span>+500 pacientes</span>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </Container>
     </Section>
   )

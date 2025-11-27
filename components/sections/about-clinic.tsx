@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Sparkles, Microscope, Leaf, Heart, Users, Shield } from "lucide-react"
+import { fadeInLeft, fadeInRight, fadeInUp, viewportConfig, staggerContainer } from "@/lib/animation-variants"
 
 const differentials = [
   { text: "Protocolos exclusivos de tricologia", icon: Microscope },
@@ -24,10 +25,10 @@ export function AboutClinic() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Grid - Enhanced */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
             className="relative"
           >
             {/* Main Image */}
@@ -44,10 +45,10 @@ export function AboutClinic() {
               
               {/* Floating Stats Card - Hidden on mobile */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6 }}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
                 className="hidden md:block absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 border border-stone-100"
               >
                 <div className="flex items-center gap-4">
@@ -68,16 +69,13 @@ export function AboutClinic() {
 
           {/* Content - Enhanced */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
           >
             <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              variants={fadeInUp}
               className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-6"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -99,16 +97,19 @@ export function AboutClinic() {
             </div>
 
             {/* Differentials Grid - Enhanced */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <motion.div 
+              className="grid sm:grid-cols-2 gap-4"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+            >
               {differentials.map((item, index) => {
                 const Icon = item.icon
                 return (
                   <motion.div 
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 + index * 0.08 }}
+                    variants={fadeInUp}
                     className="group flex items-center gap-3 p-3 rounded-xl bg-stone-50/50 hover:bg-stone-50 border border-transparent hover:border-stone-200 transition-all duration-300"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -118,7 +119,7 @@ export function AboutClinic() {
                   </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </Container>
