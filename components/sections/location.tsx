@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { MapPin, Clock, Phone, Navigation, Car, Building2 } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, viewport } from "@/lib/animation-variants"
+import { fadeInUp, fadeInLeft, fadeInRight, viewport } from "@/lib/animation-variants"
 
 const neighborhoods = [
   "Centro", "Ingá", "Icaraí", "Santa Rosa", "Charitas", "São Francisco", "Piratininga", "Itaipu", "São Gonçalo"
@@ -34,7 +34,7 @@ export function Location() {
             Visite nossa clínica
           </h2>
           <p className="text-stone-600 text-lg">
-            Estamos localizados no coração de Niterói, prontos para recebê-la!
+            Estamos localizados no coração de Niterói, prontos para recebê-lo(a)!
           </p>
         </motion.div>
 
@@ -59,6 +59,9 @@ export function Location() {
                     Rua Quinze de Novembro, 90
                   </p>
                   <p className="text-stone-600 leading-relaxed text-sm">
+                    Edifício Global Offices
+                  </p>
+                  <p className="text-stone-600 leading-relaxed text-sm">
                     Sala 604 – Centro
                   </p>
                   <p className="text-stone-800 font-semibold text-sm mt-1">
@@ -79,11 +82,7 @@ export function Location() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between gap-4 text-sm">
                       <span className="text-stone-500">Segunda a Sexta</span>
-                      <span className="text-stone-800 font-medium whitespace-nowrap">09h às 19h</span>
-                    </div>
-                    <div className="flex items-center justify-between gap-4 text-sm">
-                      <span className="text-stone-500">Sábado</span>
-                      <span className="text-stone-800 font-medium whitespace-nowrap">09h às 13h</span>
+                      <span className="font-medium text-stone-800">09:00 - 19:00</span>
                     </div>
                   </div>
                 </div>

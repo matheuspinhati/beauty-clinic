@@ -17,7 +17,7 @@ const steps = [
   {
     number: "02",
     title: "Tricoscopia",
-    description: "Análise detalhada do couro cabeludo e fios com tecnologia de magnificação.",
+    description: "Análise detalhada do couro cabeludo e fios com tecnologia de ponta.",
     icon: Search,
   },
   {
@@ -261,8 +261,8 @@ export function TrichologyJourney() {
               variants={fadeInUp}
               className="inline-block"
             >
-          <Link
-            href="/quiz"
+              <Link
+                href="/quiz"
                 className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-primary font-bold text-lg overflow-hidden shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-105"
               >
                 {/* Shimmer effect */}
@@ -309,15 +309,15 @@ export function TrichologyJourney() {
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 0 00-2-2H6a2 0 00-2 2v6a2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                <span>Consulta sigilosa</span>
+                <span>Consulta detalhada</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
-                <span>+500 pacientes atendidos</span>
+                <span>Resultados reais</span>
               </div>
             </motion.div>
           </div>

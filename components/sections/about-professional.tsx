@@ -4,24 +4,36 @@ import { motion } from "motion/react"
 import Image from "next/image"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
-import { GraduationCap, Award, BadgeCheck } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, scaleIn, staggerContainer, viewport } from "@/lib/animation-variants"
+import { BadgeCheck, GraduationCap, Award } from "lucide-react"
+import { fadeInUp, fadeInRight, scaleIn, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const qualifications = [
-  { text: "Graduada em Enfermagem – UFRJ", year: "2006" },
-  { text: "Pós-graduação em Controle de Infecção", year: "2014" },
-  { text: "Mestrado em Saúde e Tecnologia", year: "2018" },
-  { text: "Pós-graduação em Tricologia Clínica", year: "2023" },
-  { text: "Pós-graduação em Enf. Dermatológica e Estética", year: "2025" },
+  {
+    title: "Mestre em Saúde e Tecnologia",
+  },
+  {
+    title: "Especialista em Tricologia Clínica",
+  },
+  {
+    title: "Especialista em Dermatologia e Estética",
+  },
+  {
+    title: "Especialista em Controle de Infecção",
+  },
+  {
+    title: "Graduada em Enfermagem pela UFRJ",
+  },
 ]
 
 const courses = [
-  "Terapia Capilar",
-  "Laser no Crescimento Capilar",
-  "Tricologia de Ouro",
   "Toxina Botulínica",
   "Preenchimento Facial",
   "Ultraformer MPT e Bioestimuladores",
+  "Fios de PDO",
+  "Peeling Químico",
+  "Microagulhamento",
+  "Intradermoterapia",
+  "Terapia Capilar"
 ]
 
 export function AboutProfessional() {
@@ -51,10 +63,10 @@ export function AboutProfessional() {
             <p className="text-lg text-primary font-medium mb-6">Tricologista e Esteta</p>
             
             <div className="space-y-4 mb-10">
-              <p className="text-stone-600 leading-relaxed text-lg">
+              <p className="text-stone-800 leading-relaxed text-lg">
                 Bruna Rocha possui <strong className="text-stone-800">19 anos de experiência</strong> em saúde, com formação robusta e atuação focada em segurança, técnica refinada e resultados consistentes.
               </p>
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-stone-800 leading-relaxed text-lg">
                 Unindo conhecimento técnico profundo à sensibilidade estética, traz para Niterói uma abordagem moderna, precisa e acolhedora.
               </p>
             </div>
@@ -68,32 +80,20 @@ export function AboutProfessional() {
                   </div>
                   <h3 className="font-serif text-xl text-stone-800">Formação Acadêmica</h3>
                 </div>
-                <motion.div 
-                  className="space-y-3"
-                  variants={staggerContainer}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={viewport}
-                >
+                <div className="space-y-4">
                   {qualifications.map((item, index) => (
-                    <motion.div 
-                      key={index}
-                      variants={fadeInLeft}
-                      className="flex items-center gap-3 group"
-                    >
-                      <span className="flex-shrink-0 w-14 text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded text-center">
-                        {item.year}
-                      </span>
-                      <div className="h-px flex-shrink-0 w-4 bg-stone-300" />
-                      <span className="text-sm text-stone-600 group-hover:text-stone-800 transition-colors">
-                        {item.text}
-                      </span>
-                    </motion.div>
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                      <div>
+                        <p className="text-stone-800 font-medium">{item.title}</p>
+
+                      </div>
+                    </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
-              
-              {/* Cursos - Tags Style */}
+
+              {/* Cursos e Aprimoramentos */}
               <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">

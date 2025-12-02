@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
-import { Instagram, MapPin, MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react"
+import { Instagram, MapPin, ArrowRight, Sparkles, Heart } from "lucide-react"
 import { fadeInUp, fadeIn, viewport, staggerContainer } from "@/lib/animation-variants"
 import { RiWhatsappLine } from "@remixicon/react"
 
@@ -84,7 +84,7 @@ export function FinalCTA() {
               className="h-14 px-8 text-base w-full sm:w-auto bg-white/10 border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 rounded-full  backdrop-blur-sm transition-all duration-300" 
               asChild
             >
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/bruelclinic/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="mr-2 w-5 h-5" />
                 Siga no Instagram
               </a>
@@ -103,10 +103,6 @@ export function FinalCTA() {
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
               <span>Niterói, RJ</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Heart className="w-4 h-4" />
-              <span>+500 pacientes</span>
             </div>
           </motion.div>
         </motion.div>

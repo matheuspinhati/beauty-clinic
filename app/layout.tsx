@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -103,6 +104,7 @@ export default function RootLayout({
           "font-sans antialiased bg-background text-foreground overflow-x-hidden"
         )}
       >
+        <CustomCursor />
         {children}
       </body>
     </html>

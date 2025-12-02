@@ -9,7 +9,6 @@ const quickLinks = [
   { name: "Sobre", href: "#sobre" },
   { name: "Serviços", href: "#servicos" },
   { name: "Head Spa", href: "#head-spa" },
-  { name: "Depoimentos", href: "#depoimentos" },
   { name: "FAQ", href: "#faq" },
 ]
 
@@ -24,13 +23,13 @@ const services = [
 
 export function Footer() {
   return (
-    <footer className="bg-stone-50 text-stone-600 relative overflow-hidden border-t border-stone-200">
+    <footer className="bg-[#F5F3F1] text-stone-600 relative overflow-hidden border-t border-stone-200">
       {/* Main Footer Content */}
       <div className="pt-16 pb-8">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-            {/* Brand Column */}
-            <div className="lg:col-span-4">
+            {/* Brand Column - Left Side */}
+            <div className="lg:col-span-3">
               <Link href="/" className="inline-block group">
                 <Image 
                   src="/logo.png" 
@@ -47,13 +46,17 @@ export function Footer() {
               {/* Social Links */}
               <div className="flex gap-3 mt-6">
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/bruelclinic/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 hover:bg-primary flex items-center justify-center text-primary hover:text-white transition-all duration-300"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.facebook.com/bruelclinic" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 hover:bg-primary flex items-center justify-center text-primary hover:text-white transition-all duration-300"
                 >
                   <Facebook className="w-5 h-5" />
@@ -79,19 +82,71 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Services */}
-            <div className="lg:col-span-3">
-              <h4 className="text-stone-800 font-semibold mb-5 text-sm uppercase tracking-wider">Serviços</h4>
+            {/* Tricologia Services */}
+            <div className="lg:col-span-2">
+              <h4 className="text-stone-800 font-semibold mb-5 text-sm uppercase tracking-wider">Tricologia</h4>
               <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service}>
-                    <span className="text-sm text-stone-500">{service}</span>
-                  </li>
-                ))}
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Consulta Tricológica
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Terapia Capilar
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Fotobiomodulação
+                  </a>
+                </li>
+                <li>
+                  <a href="#head-spa" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Head Spa
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Microagulhamento Capilar
+                  </a>
+                </li>
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Estética Facial Services */}
+            <div className="lg:col-span-2">
+              <h4 className="text-stone-800 font-semibold mb-5 text-sm uppercase tracking-wider">Estética Facial</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Toxina Botulínica
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Bioestimuladores
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Preenchimento Facial
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Skinbooster
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
+                    Harmonização Facial
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact - Right Side */}
             <div className="lg:col-span-3">
               <h4 className="text-stone-800 font-semibold mb-5 text-sm uppercase tracking-wider">Contato</h4>
               <ul className="space-y-4">
@@ -99,6 +154,7 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-stone-500">
                     Rua Quinze de Novembro, 90<br />
+                    Edifício Global Offices<br />
                     Sala 604 – Centro, Niterói/RJ
                   </span>
                 </li>

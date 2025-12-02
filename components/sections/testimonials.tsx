@@ -89,7 +89,7 @@ export function Testimonials() {
                 
                 {/* Text */}
                 <p className="text-stone-600 leading-relaxed mb-8 min-h-[100px]">
-                  "{item.text}"
+                  &quot;{item.text}&quot;
                 </p>
                 
                 {/* Author */}
@@ -127,7 +127,7 @@ export function Testimonials() {
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-stone-500 to-stone-600 border-2 border-white" />
             </div>
             <span className="text-sm text-stone-600">
-              <strong className="text-stone-800">+500</strong> pacientes satisfeitas
+              <strong className="text-stone-800">Resultados reais</strong> de pacientes satisfeitas
             </span>
           </div>
         </motion.div>

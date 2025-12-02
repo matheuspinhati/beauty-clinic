@@ -12,10 +12,10 @@ import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, viewport } from "@
 const indications = [
   "Linhas finas e rugas",
   "Flacidez facial",
-  "Textura irregular",
   "Manchas e melasma",
   "Perda de viço",
-  "Contorno facial",
+  "Hidratação profunda",
+  "Melhora da textura",
 ]
 
 export function FacialAesthetics() {
@@ -37,7 +37,7 @@ export function FacialAesthetics() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-stone-200/50 relative">
                 <Image 
-                  src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+                  src="/tratamentos-faciais.webp"
                   alt="Estética Facial Natural"
                   fill
                   className="object-cover object-center"
@@ -50,9 +50,9 @@ export function FacialAesthetics() {
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20">
                     <p className="font-serif italic text-white text-lg leading-relaxed">
-                      "Beleza que realça, não que transforma."
+                      &quot;O cuidado que você merece.&quot;
                     </p>
-                    <p className="text-white/70 text-sm mt-2">— Filosofia Bruel</p>
+                    <p className="text-white/70 text-sm mt-2">— Bruel Beauty Clinic</p>
                   </div>
                 </div>
               </div>

@@ -6,20 +6,20 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Sparkles, ArrowRight, Star, CheckCircle2 } from "lucide-react"
-import { fadeInUp, scaleIn, fadeInRight, staggerContainer, viewport } from "@/lib/animation-variants"
+import { fadeInUp, fadeInRight } from "@/lib/animation-variants"
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-30 md:pt-20 lg:pt-0 bg-gradient-to-br from-stone-50 via-white to-stone-50">
       {/* Background Elements - Simplified for mobile performance */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Static gradient orbs for mobile, animated on desktop */}
-        <div className="absolute -top-[20%] -right-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-3xl opacity-30" />
-        <div className="absolute -bottom-[20%] -left-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-stone-200/5 rounded-full blur-3xl opacity-30" />
+        {/* Static gradient orbs for mobile, animated on desktop - Enhanced with primary color */}
+        <div className="absolute -top-[20%] -right-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/8 rounded-full blur-3xl opacity-40" />
+        <div className="absolute -bottom-[20%] -left-[10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-3xl opacity-30" />
         
-        {/* Decorative elements - hidden on mobile */}
-        <div className="hidden md:block absolute top-1/4 left-[15%] w-2 h-2 bg-primary/20 rounded-full" />
-        <div className="hidden md:block absolute top-1/3 right-[20%] w-1.5 h-1.5 bg-stone-300/40 rounded-full" />
+        {/* Decorative elements - hidden on mobile - Enhanced with primary color */}
+        <div className="hidden md:block absolute top-1/4 left-[15%] w-2 h-2 bg-primary/30 rounded-full" />
+        <div className="hidden md:block absolute top-1/3 right-[20%] w-1.5 h-1.5 bg-primary/40 rounded-full" />
         <div className="hidden md:block absolute bottom-1/4 left-[30%] w-1 h-1 bg-primary/30 rounded-full" />
       </div>
 
@@ -29,20 +29,15 @@ export function Hero() {
           {/* Text Content */}
           <motion.div 
             className="max-w-2xl text-center lg:text-left space-y-8 order-2 lg:order-1"
-            variants={staggerContainer}
+            variants={fadeInUp}
             initial="initial"
             animate="animate"
           >
-            <motion.div variants={fadeInUp}>
-              {/* Badge */}
-              <motion.div
-                variants={scaleIn}
-                className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white border border-stone-200 text-xs font-bold tracking-[0.15em] uppercase text-primary mb-6 shadow-sm"
-              >
+            <div className="space-y-6">
+              <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold tracking-[0.2em] uppercase text-primary">
                 <Sparkles className="w-3.5 h-3.5" />
                 Niterói • RJ
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              </motion.div>
+              </span>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-medium text-stone-800 leading-[1.1]">
                 Tricologia{" "}
@@ -52,17 +47,18 @@ export function Hero() {
                     <path d="M0 6 Q50 0, 100 6 T200 6" fill="none" stroke="currentColor" strokeWidth="3" />
                   </svg>
                 </span>
-                <span className="italic text-stone-400 text-2xl md:text-4xl lg:text-5xl font-light block mt-3">
+                <br />
+                <span className="italic text-stone-400 text-2xl md:text-4xl lg:text-5xl font-light">
                   & Estética Natural
                 </span>
               </h1>
-            </motion.div>
+            </div>
 
             <motion.p
               variants={fadeInUp}
               className="text-lg lg:text-xl text-stone-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              Protocolos científicos, tecnologia avançada e uma experiência sensorial única para realçar sua melhor versão com <strong className="text-stone-800">segurança e elegância</strong>.
+              Protocolos científicos, tecnologia avançada e uma experiência sensorial única para realçar sua melhor versão com <strong className="text-primary">segurança e elegância</strong>.
             </motion.p>
 
             {/* Trust badges */}
@@ -71,19 +67,12 @@ export function Hero() {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-stone-500"
             >
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-green-600" />
-                <span>19 anos de experiência</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-                <span>+500 pacientes</span>
+                <CheckCircle2 className="w-4 h-4 text-primary" />
+                <span className="text-stone-600">19 anos de experiência</span>
               </div>
             </motion.div>
 
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4 pt-2"
-            >
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <Button 
                 variant="premium" 
                 size="lg" 
@@ -102,14 +91,14 @@ export function Hero() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="h-14 px-8 text-base border-stone-300 hover:bg-stone-50 text-stone-600 rounded-full" 
+                className="h-14 px-8 text-base border-primary/30 hover:bg-primary/5 text-stone-600 hover:text-primary rounded-full transition-all duration-300" 
                 asChild
               >
                 <a href="#servicos">
                   Conhecer Tratamentos
                 </a>
               </Button>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Hero Image */}
@@ -121,30 +110,30 @@ export function Hero() {
           >
             <div className="relative">
               {/* Main Image */}
-              <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-stone-200/50">
+              <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-primary/10">
                 <Image 
-                  src="/hero.png" 
+                  src="/hero-section.webp" 
                   alt="Bruel Beauty Clinic" 
                   fill
                   className="object-cover"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+                {/* Overlay Gradient - Enhanced with primary color */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
               </div>
 
-              {/* Decorative frame */}
-              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-primary/10 rounded-3xl -z-10" />
+              {/* Decorative frame - Enhanced with primary color */}
+              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-primary/15 rounded-3xl -z-10" />
 
-              {/* Floating Badge - Experience */}
+              {/* Floating Badge - Experience - Enhanced with primary color */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", type: "tween" }}
-                className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-stone-100 hidden md:block"
+                className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-primary/10 hidden md:block"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg shadow-primary/20">
                     <span className="text-xl font-serif font-bold">19</span>
                   </div>
                   <div>
@@ -158,11 +147,11 @@ export function Hero() {
               <motion.div 
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1, type: "tween" }}
-                className="absolute -top-4 -right-4 bg-white py-3 px-4 rounded-xl shadow-lg border border-stone-100 hidden lg:flex items-center gap-2"
+                className="absolute -top-4 -right-4 bg-white py-3 px-4 rounded-xl shadow-lg border border-primary/10 hidden lg:flex items-center gap-2"
               >
                 <div className="flex -space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                   ))}
                 </div>
                 <span className="text-xs font-medium text-stone-600">5.0 estrelas</span>

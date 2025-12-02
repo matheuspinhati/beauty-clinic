@@ -9,7 +9,7 @@ import { fadeInLeft, fadeInRight, fadeInUp, viewport, staggerContainer } from "@
 
 const differentials = [
   { text: "Protocolos exclusivos de tricologia", icon: Microscope },
-  { text: "Tecnologia avançada (laser, LED, ultrassom)", icon: Sparkles },
+  { text: "Tecnologia avançada", icon: Sparkles },
   { text: "Head Spa como experiência premium", icon: Leaf },
   { text: "Ambiente acolhedor e técnico", icon: Heart },
   { text: "Acompanhamento contínuo", icon: Users },
@@ -18,7 +18,7 @@ const differentials = [
 
 export function AboutClinic() {
   return (
-    <Section id="sobre" className="bg-white relative overflow-hidden">
+    <Section id="sobre" className="bg-gradient-to-b from-stone-50 to-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/3 to-transparent rounded-full blur-3xl -z-0" />
       
@@ -73,10 +73,10 @@ export function AboutClinic() {
             </h2>
             
             <div className="space-y-4 mb-10">
-              <p className="text-stone-600 leading-relaxed text-lg">
+              <p className="text-stone-800 leading-relaxed text-lg">
                 A <strong className="text-stone-800">Bruel Beauty Clinic</strong> é uma clínica de tricologia especializada e estética avançada, criada para unir resultados reais, segurança e bem-estar em um ambiente premium.
               </p>
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-stone-800 leading-relaxed text-lg">
                 Aqui, cada paciente recebe um atendimento individualizado, baseado em evidências científicas, com protocolos completos que integram saúde capilar, estética facial e um cuidado sensorial único.
               </p>
             </div>

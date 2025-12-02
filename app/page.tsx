@@ -19,14 +19,14 @@ export default function Home() {
     <main className="min-h-screen relative bg-stone-50 selection:bg-stone-200">
       <Header />
       <Hero />
-      <TreatmentsMarquee />
+      {/* <TreatmentsMarquee /> */}
       <AboutClinic />
       <AboutProfessional />
       <Services />
       <HeadSpa />
       <TrichologyJourney />
       <FacialAesthetics />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Location />
       <FAQ />
       <FinalCTA />
