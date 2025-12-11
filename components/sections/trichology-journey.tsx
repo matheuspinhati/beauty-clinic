@@ -22,7 +22,7 @@ const steps = [
   },
   {
     number: "03",
-    title: "Diagnóstico",
+    title: "Avaliação",
     description: "Identificação precisa da causa da queda ou alteração capilar.",
     icon: FileText,
   },
