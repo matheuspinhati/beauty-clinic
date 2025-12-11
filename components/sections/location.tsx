@@ -7,10 +7,6 @@ import { Section } from "@/components/ui/section"
 import { MapPin, Clock, Phone, Navigation, Car, Building2 } from "lucide-react"
 import { fadeInUp, fadeInLeft, fadeInRight, viewport } from "@/lib/animation-variants"
 
-const neighborhoods = [
-  "Centro", "Ingá", "Icaraí", "Santa Rosa", "Charitas", "São Francisco", "Piratininga", "Itaipu", "São Gonçalo"
-]
-
 export function Location() {
   return (
     <Section id="localizacao" className="bg-white relative overflow-hidden">
@@ -111,21 +107,35 @@ export function Location() {
               </div>
             </div>
 
-            {/* Neighborhoods */}
-            <div className="pt-2">
-              <div className="flex items-center gap-2 mb-4">
-                <Car className="w-4 h-4 text-stone-400" />
-                <span className="text-sm text-stone-600 font-medium">Atendemos pacientes de:</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {neighborhoods.map((item, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1.5 rounded-full bg-stone-100 text-stone-600 text-xs font-medium"
-                  >
-                    {item}
-                  </span>
-                ))}
+            {/* Parking Info - Premium Design */}
+            <div className="bg-gradient-to-br from-stone-50 to-white rounded-2xl p-6 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 flex-shrink-0">
+                  <Car className="w-6 h-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-serif text-lg text-stone-800 mb-2 flex items-center gap-2">
+                    Estacionamento
+                    <span className="text-[10px] font-sans font-bold uppercase tracking-wider bg-primary/10 text-primary px-2 py-0.5 rounded-full">Rotativo</span>
+                  </h3>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2 text-sm text-stone-600">
+                      <MapPin className="w-4 h-4 text-primary/60 mt-0.5 flex-shrink-0" />
+                      <p className="leading-relaxed">
+                        Rua General Andrade Neves, 38<br/>
+                        Centro, Niterói-RJ
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-start gap-2 text-sm text-stone-600">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                      <p className="leading-relaxed">
+                        Estacionamento coberto com acesso interno direto à clínica.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

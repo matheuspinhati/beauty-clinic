@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
-import { Sparkles, ArrowRight, Star, CheckCircle2 } from "lucide-react"
+import { Sparkles, ArrowRight, Star } from "lucide-react"
 import { fadeInUp, fadeInRight } from "@/lib/animation-variants"
 
 export function Hero() {
@@ -61,16 +61,6 @@ export function Hero() {
               Protocolos científicos, tecnologia avançada e uma experiência sensorial única para realçar sua melhor versão com <strong className="text-primary">segurança e elegância</strong>.
             </motion.p>
 
-            {/* Trust badges */}
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-stone-500"
-            >
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-primary" />
-                <span className="text-stone-600">19 anos de experiência</span>
-              </div>
-            </motion.div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <Button 
@@ -112,7 +102,7 @@ export function Hero() {
               {/* Main Image */}
               <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-primary/10">
                 <Image 
-                  src="/hero-section.webp" 
+                  src="/hero-section.jpg" 
                   alt="Bruel Beauty Clinic" 
                   fill
                   className="object-cover"
@@ -126,22 +116,6 @@ export function Hero() {
               {/* Decorative frame - Enhanced with primary color */}
               <div className="absolute -top-4 -right-4 w-full h-full border-2 border-primary/15 rounded-3xl -z-10" />
 
-              {/* Floating Badge - Experience - Enhanced with primary color */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", type: "tween" }}
-                className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-primary/10 hidden md:block"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg shadow-primary/20">
-                    <span className="text-xl font-serif font-bold">19</span>
-                  </div>
-                  <div>
-                    <p className="text-xs text-stone-500 uppercase tracking-wider font-semibold">Anos de</p>
-                    <p className="text-stone-800 font-serif text-lg">Experiência</p>
-                  </div>
-                </div>
-              </motion.div>
 
               {/* Floating Badge - Top Right */}
               <motion.div 

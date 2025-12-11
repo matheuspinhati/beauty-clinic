@@ -18,7 +18,7 @@ const services = {
     },
     {
       title: "Terapia Capilar",
-      description: "Tratamentos com óleos essenciais e argila para reduzir oleosidade, inflamação e fortalecer o couro cabeludo.",
+      description: "Tratamento com oleos essenciais, argila, aasociados a tecnologia para problemas como queda de cabelo, caspa, oleosidade, inflamação, danos por química.",
       icon: Leaf,
     },
     {
@@ -28,7 +28,7 @@ const services = {
     },
     {
       title: "Microagulhamento Capilar",
-      description: "Indução de colágeno com drug delivery de ativos específicos para alopecias.",
+      description: "Procedimento minimamente invasivo, com permeação de ativos através do deug delivery.",
       icon: Target,
     },
     {

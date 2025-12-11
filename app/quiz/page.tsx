@@ -17,8 +17,8 @@ interface FormData {
 const interests = [
   {
     id: "tricologia",
-    label: "Tricologia Capilar",
-    description: "Queda de cabelo, calvície, saúde do couro cabeludo",
+    label: "Tricologia",
+    description: "Queda de cabelo, calvicie, dermatite seborreica, outras alterações do couro cabeludo",
     icon: Sparkles,
   },
   {

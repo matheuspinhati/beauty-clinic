@@ -29,10 +29,6 @@ const courses = [
   "Toxina Botulínica",
   "Preenchimento Facial",
   "Ultraformer MPT e Bioestimuladores",
-  "Fios de PDO",
-  "Peeling Químico",
-  "Microagulhamento",
-  "Intradermoterapia",
   "Terapia Capilar"
 ]
 

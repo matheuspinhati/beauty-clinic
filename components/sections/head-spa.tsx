@@ -10,12 +10,12 @@ import { Sparkles, Heart, Brain, Droplets, Wind, Leaf, ArrowRight } from "lucide
 import { fadeInLeft, fadeInUp, scaleIn, staggerContainer, viewport } from "@/lib/animation-variants"
 
 const benefits = [
-  { text: "Redução de estresse e tensão", icon: Brain },
-  { text: "Diminuição de dores de cabeça", icon: Heart },
-  { text: "Controle de oleosidade e caspa", icon: Droplets },
-  { text: "Estímulo do crescimento saudável", icon: Leaf },
-  { text: "Sensação imediata de leveza", icon: Wind },
-  { text: "Melhora da saúde dos fios", icon: Sparkles },
+  { text: "Elimina impurezas acumuladas", icon: Brain },
+  { text: "Reduz oleosidade persistente", icon: Heart },
+  { text: "Alivia dor e tensão", icon: Droplets },
+  { text: "Estimula o crescimento capilar", icon: Leaf },
+  { text: "Melhora circulação sanguínea", icon: Wind },
+  { text: "Reduz dores de cabeça", icon: Sparkles },
 ]
 
 export function HeadSpa() {
