@@ -10,7 +10,7 @@ import { fadeInLeft, fadeInRight, fadeInUp, viewport, staggerContainer } from "@
 const differentials = [
   { text: "Protocolos exclusivos de tricologia", icon: Microscope },
   { text: "Tecnologia avançada", icon: Sparkles },
-  { text: "Head Spa como experiência premium", icon: Leaf },
+  { text: "Head Spa com experiência premium", icon: Leaf },
   { text: "Ambiente acolhedor e técnico", icon: Heart },
   { text: "Acompanhamento contínuo", icon: Users },
   { text: "Atuação ética e transparente", icon: Shield },

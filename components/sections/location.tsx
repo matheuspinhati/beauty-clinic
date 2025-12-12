@@ -30,7 +30,7 @@ export function Location() {
             Visite nossa clínica
           </h2>
           <p className="text-stone-600 text-lg">
-            Estamos localizados no coração de Niterói, prontos para recebê-lo(a)!
+            Estamos localizados no coração de Niterói, prontos para recebê-la(o)!
           </p>
         </motion.div>
 
@@ -52,10 +52,10 @@ export function Location() {
                 <div className="flex-1 min-w-0">
                   <h3 className="font-serif text-lg text-stone-800 mb-3">Endereço</h3>
                   <p className="text-stone-600 leading-relaxed text-sm">
-                    Rua Quinze de Novembro, 90
+                    Edifício Global Offices
                   </p>
                   <p className="text-stone-600 leading-relaxed text-sm">
-                    Edifício Global Offices
+                    Rua Quinze de Novembro, 90
                   </p>
                   <p className="text-stone-600 leading-relaxed text-sm">
                     Sala 604 – Centro
@@ -79,6 +79,10 @@ export function Location() {
                     <div className="flex items-center justify-between gap-4 text-sm">
                       <span className="text-stone-500">Segunda a Sexta</span>
                       <span className="font-medium text-stone-800">09:00 - 19:00</span>
+                    </div>
+                    <div className="flex items-center justify-between gap-4 text-sm">
+                      <span className="text-stone-500">Sábado</span>
+                      <span className="font-medium text-stone-800">09:00 - 13:00</span>
                     </div>
                   </div>
                 </div>

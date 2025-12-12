@@ -18,7 +18,7 @@ const services = {
     },
     {
       title: "Terapia Capilar",
-      description: "Tratamento com oleos essenciais, argila, aasociados a tecnologia para problemas como queda de cabelo, caspa, oleosidade, inflamação, danos por química.",
+      description: "Tratamento com óleos essenciais, argila, aasociados a tecnologia para problemas como queda de cabelo, caspa, oleosidade, inflamação, danos por química.",
       icon: Leaf,
     },
     {

@@ -89,32 +89,7 @@ export function AboutProfessional() {
                 </div>
               </div>
 
-              {/* Cursos e Aprimoramentos */}
-              <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Award className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="font-serif text-xl text-stone-800">Cursos e Aprimoramentos</h3>
-                </div>
-                <motion.div 
-                  className="flex flex-wrap gap-2"
-                  variants={staggerContainer}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={viewport}
-                >
-                  {courses.map((item, index) => (
-                    <motion.span
-                      key={index}
-                      variants={scaleIn}
-                      className="px-4 py-2 rounded-full bg-stone-50 border border-stone-200 text-sm text-stone-600 hover:border-primary/30 hover:text-primary transition-all cursor-default"
-                    >
-                      {item}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div>
+
             </div>
           </motion.div>
 

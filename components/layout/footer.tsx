@@ -153,8 +153,8 @@ export function Footer() {
                 <li className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-stone-500">
-                    Rua Quinze de Novembro, 90<br />
                     Edifício Global Offices<br />
+                    Rua Quinze de Novembro, 90<br />
                     Sala 604 – Centro, Niterói/RJ
                   </span>
                 </li>

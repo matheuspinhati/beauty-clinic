@@ -62,24 +62,7 @@ export function FAQ() {
               Reunimos as dúvidas mais comuns dos nossos pacientes. Se tiver outras perguntas, entre em contato conosco.
             </p>
             
-            {/* Contact Card */}
-            <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <RiWhatsappLine className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg text-stone-800 mb-1">Ainda tem dúvidas?</h3>
-                  <p className="text-sm text-stone-600 mb-3">Fale conosco pelo WhatsApp</p>
-                  <Link 
-                    href="/quiz"
-                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
-                  >
-                    Enviar mensagem →
-                  </Link>
-                </div>
-              </div>
-            </div>
+
           </motion.div>
 
           {/* Right Column - FAQ Items */}
@@ -160,6 +143,32 @@ export function FAQ() {
             })}
           </motion.div>
         </div>
+        
+        {/* Contact Card - Bottom for Mobile/Desktop */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewport}
+          className="mt-12 max-w-xl mx-auto"
+        >
+          <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <RiWhatsappLine className="w-7 h-7 text-primary" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-serif text-xl text-stone-800 mb-2">Ainda tem dúvidas?</h3>
+                <p className="text-stone-600 mb-4">Caso sua dúvida não esteja listada acima, nossa equipe está pronta para te atender.</p>
+                <Link 
+                  href="/quiz"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors text-sm font-medium"
+                >
+                  Fale conosco no WhatsApp
+                </Link>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </Container>
     </Section>
   )

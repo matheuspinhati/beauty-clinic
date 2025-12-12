@@ -52,8 +52,8 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled 
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_2px_40px_-12px_rgba(0,0,0,0.1)] py-3" 
-          : "bg-transparent py-5"
+          ? "bg-primary/95 backdrop-blur-xl shadow-lg py-3" 
+          : "bg-primary py-5"
       )}
     >
       <Container>
@@ -61,7 +61,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="group relative">
             <MotionImage 
-              src="/logo.png" 
+              src="/logo-header1.png" 
               alt="Bruel Beauty Clinic" 
               width={168}
               height={56}
@@ -82,23 +82,28 @@ export function Header() {
                   className={cn(
                     "relative px-4 py-2 text-sm font-medium transition-all duration-300 uppercase tracking-wider",
                     isActive 
-                      ? "text-primary" 
-                      : "text-stone-600 hover:text-primary"
+                      ? "text-white" 
+                      : "text-white/70 hover:text-white"
                   )}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
                       layoutId="activeSection"
-                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-primary rounded-full"
+                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-white rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                 </a>
               )
             })}
-            <div className="ml-4 pl-4 border-l border-stone-200">
-              <Button variant="premium" size="sm" className="rounded-full shadow-lg hover:shadow-xl" asChild>
+            <div className="ml-4 pl-4 border-l border-white/20">
+              <Button 
+                variant="premium"
+                size="sm"
+                className="rounded-full shadow-lg hover:shadow-xl border border-white/20" 
+                asChild
+              >
                 <Link href="/quiz">
                   <span className="mr-2">✦</span>
                   Agendar
@@ -110,10 +115,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
-            className={cn(
-              "lg:hidden p-3 rounded-full transition-colors",
-              isScrolled ? "bg-stone-100 text-stone-700" : "bg-white/10 backdrop-blur text-stone-700"
-            )}
+            className="lg:hidden p-3 rounded-full transition-colors bg-white/10 text-white backdrop-blur hover:bg-white/20 border border-white/10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <AnimatePresence mode="wait">

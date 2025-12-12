@@ -18,25 +18,25 @@ const interests = [
   {
     id: "tricologia",
     label: "Tricologia",
-    description: "Queda de cabelo, calvicie, dermatite seborreica, outras alterações do couro cabeludo",
+    description: "Queda de cabelo, calvicie, dermatite seborreica e outras alterações do couro cabeludo.",
     icon: Sparkles,
   },
   {
     id: "estetica",
     label: "Estética Facial",
-    description: "Botox, bioestimuladores, rejuvenescimento",
+    description: "Botox, bioestimuladores e rejuvenescimento.",
     icon: Smile,
   },
   {
     id: "headspa",
     label: "Head Spa",
-    description: "Relaxamento, massagem, experiência sensorial",
+    description: "Relaxamento, massagem e experiência sensorial.",
     icon: Leaf,
   },
   {
     id: "outro",
     label: "Outro / Dúvida geral",
-    description: "Quero saber mais sobre os serviços",
+    description: "Quero saber mais sobre os serviços.",
     icon: MessageCircle,
   },
 ]
