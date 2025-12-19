@@ -56,6 +56,7 @@ export function AboutProfessional() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-stone-800 mb-4 leading-tight">
               Bruna Rocha da Silva
             </h2>
+            <p className="text-sm text-stone-600 mb-2">COREN-RJ: 153.186</p>
             <p className="text-lg text-primary font-medium mb-6">Tricologista e Esteta</p>
             
             <div className="space-y-4 mb-10">
