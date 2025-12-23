@@ -22,7 +22,7 @@ const links = [
     icon: RiWhatsappLine,
   },
   {
-    href: "https://maps.app.goo.gl/c4PxgAYQkYgb6W6f9",
+    href: "https://www.waze.com/en/live-map/directions/br/rj/r.-gen.-andrade-neves,-38?place=ChIJP0GPRduDmQAR2bJ4XuiuSpw",
     label: "Visite nossa clínica",
     icon: MapPin,
   },
