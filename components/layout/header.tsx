@@ -61,7 +61,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="group relative">
             <MotionImage 
-              src="/logo-header1.png" 
+              src="/logo-dourado.png" 
               alt="Bruel Beauty Clinic" 
               width={168}
               height={56}

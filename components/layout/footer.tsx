@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Container } from "@/components/ui/container"
-import { Instagram, Facebook, MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react"
+import { Instagram, Facebook, MapPin, Phone, Mail, Clock, ArrowUpRight, Car } from "lucide-react"
 
 const quickLinks = [
   { name: "Sobre", href: "#sobre" },
@@ -138,11 +138,6 @@ export function Footer() {
                     Skinbooster
                   </a>
                 </li>
-                <li>
-                  <a href="#servicos" className="text-sm text-stone-500 hover:text-primary transition-colors">
-                    Harmonização Facial
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -175,6 +170,15 @@ export function Footer() {
                   <span className="text-sm text-stone-500">
                     Seg - Sex: 09h às 19h<br />
                     Sábado: 09h às 13h
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Car className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-stone-500">
+                    Estacionamento Rotativo<br />
+                    Rua General Andrade Neves, 38<br />
+                    Centro, Niterói-RJ<br />
+                    Estacionamento coberto com acesso interno direto à clínica.
                   </span>
                 </li>
               </ul>
