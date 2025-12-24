@@ -89,28 +89,6 @@ export function Location() {
               </div>
             </div>
 
-            {/* Contact Card */}
-            <div className="bg-primary rounded-2xl p-6 text-white">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-serif text-lg mb-2">Agende sua Consulta</h3>
-                  <p className="text-white/80 text-sm mb-4">
-                    Entre em contato pelo WhatsApp
-                  </p>
-                  <Link 
-                    href="/quiz"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm hover:bg-stone-100 transition-colors"
-                  >
-                    (21) 97251-3296
-                    <Navigation className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* Parking Info - Premium Design */}
             <div className="bg-gradient-to-br from-stone-50 to-white rounded-2xl p-6 border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300 group">
               <div className="flex items-start gap-4">
@@ -139,6 +117,28 @@ export function Location() {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Card */}
+            <div className="bg-primary rounded-2xl p-6 text-white">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-serif text-lg mb-2">Agende sua Consulta</h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Entre em contato pelo WhatsApp
+                  </p>
+                  <Link 
+                    href="/quiz"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm hover:bg-stone-100 transition-colors"
+                  >
+                    (21) 97251-3296
+                    <Navigation className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ const links = [
   },
   {
     href: "https://www.waze.com/en/live-map/directions/br/rj/r.-gen.-andrade-neves,-38?place=ChIJP0GPRduDmQAR2bJ4XuiuSpw",
-    label: "Visite nossa clínica",
+    label: "Estacionamento rotativo",
     icon: MapPin,
   },
 ]
